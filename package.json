@@ -4,7 +4,7 @@
     "description": "Practice problems",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon ./express/app1.js",
+        "start": "nodemon ./express/app2.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
