@@ -1,17 +1,20 @@
 const express = require('express')
 const app=express()
-
+const logger=require('./logger')
+const authorize=require('./authorize')
 //middleware
-const logger=(req,res,next)=>{
-    const method=req.method
-    const url=req.url
-    const time=new Date().getFullYear()
-    console.log(method,url,time)
-    // res.send('testing')
-    next()
-}
+// const logger=(req,res,next)=>{
+//     const method=req.method
+//     const url=req.url
+//     const time=new Date().getFullYear()
+//     console.log(method,url,time)
+//     // res.send('testing')
+//     next()
+// }
+app.use('/',logger)
+app.use('/about',authorize)
 
-app.get('/',logger,(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('Home Page')
 })
 
