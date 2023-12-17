@@ -12,7 +12,7 @@ const authorize=require('./authorize')
 //     next()
 // }
 app.use('/',logger)
-app.use('/about',authorize)
+app.use('/about',logger,authorize)
 
 app.get('/',(req,res)=>{
     res.send('Home Page')
